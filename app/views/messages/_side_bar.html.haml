@@ -1,31 +1,27 @@
-%head
-  %meta{"charset":"UTF-8"}
-  %link{"href": "messages.scss", "rel": "stylesheet"}
-%body
-  .SideBar
-    .SideBar__Username
-      .SideBar__Username__Top-Items
-        .SideBar__Username__Top-Items--Name
-          masa
-        .SideBar__Username__Top-Items--Icons
-          =link_to '#', class: 'SideBar__Username__Top-Items--Icons__LeftIcon' do
-            = icon('fas', 'edit', class: 'SideBar__Username__Top-Items--Icons__LeftIcon__EditIcon')
-          =link_to '#', class: 'SideBar__Username__Top-Items--Icons__RightIcon' do
-            = icon('fas', 'cog', class: 'SideBar__Username__Top-Items--Icons__RightIcon__CogIcon')
+.SideBar
+  .SideBar__Username
+    .SideBar__Username__Top-Items
+      .SideBar__Username__Top-Items--Name
+        masa
+      .SideBar__Username__Top-Items--Icons
+        =link_to '#', class: 'SideBar__Username__Top-Items--Icons__LeftIcon' do
+          = icon('fas', 'edit', class: 'SideBar__Username__Top-Items--Icons__LeftIcon__EditIcon')
+        =link_to '#', class: 'SideBar__Username__Top-Items--Icons__RightIcon' do
+          = icon('fas', 'cog', class: 'SideBar__Username__Top-Items--Icons__RightIcon__CogIcon')
             
-    .SideBar__GroupList
-      .SideBar__GroupList__Groups
-        .SideBar__GroupList__Groups__Groupname
-          techcamp
-        .SideBar__GroupList__Groups__Message
-          まだメッセージがありません
-      .SideBar__GroupList__Groups
-        .SideBar__GroupList__Groups__Groupname
-          techcamp
-        .SideBar__GroupList__Groups__Message
-          まだメッセージがありません
-      .SideBar__GroupList__Groups
-        .SideBar__GroupList__Groups__Groupname
-          techcamp
-        .SideBar__GroupList__Groups__Message
-          まだメッセージがありません
+  .SideBar__GroupList
+    .SideBar__GroupList__Groups
+      .SideBar__GroupList__Groups__Groupname
+        techcamp
+      .SideBar__GroupList__Groups__Message
+        まだメッセージがありません
+    .SideBar__GroupList__Groups
+      .SideBar__GroupList__Groups__Groupname
+        techcamp
+      .SideBar__GroupList__Groups__Message
+        まだメッセージがありません
+    .SideBar__GroupList__Groups
+      .SideBar__GroupList__Groups__Groupname
+        techcamp
+      .SideBar__GroupList__Groups__Message
+        まだメッセージがありません
