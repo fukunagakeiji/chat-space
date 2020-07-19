@@ -2,11 +2,11 @@
   .SideBar__Username
     .SideBar__Username__Top-Items
       .SideBar__Username__Top-Items--Name
-        masa
+        = current_user.name
       .SideBar__Username__Top-Items--Icons
         =link_to '#', class: 'SideBar__Username__Top-Items--Icons__LeftIcon' do
           = icon('fas', 'edit', class: 'SideBar__Username__Top-Items--Icons__LeftIcon__EditIcon')
-        =link_to '#', class: 'SideBar__Username__Top-Items--Icons__RightIcon' do
+        =link_to edit_user_path(current_user), class: 'SideBar__Username__Top-Items--Icons__RightIcon' do
           = icon('fas', 'cog', class: 'SideBar__Username__Top-Items--Icons__RightIcon__CogIcon')
             
   .SideBar__GroupList
