@@ -57,21 +57,25 @@
   }
 
   &__GroupList {
-    width: calc(100vh - 100px);
+    width: 300px;
     background-color: #2f3e51;
-    color: #ffffff;
     padding: 0px 20px;
 
-    &__Groups {
-      padding: 20px 0px 40px;
-      &__Groupname {
-        font-size: 15px;
-      }
-      &__Message {
-        font-size: 11px;
-      }
+      &__Groups {
+        padding: 20px 0px 40px;
 
-    }
+        &__GroupAccount {
+          color: #ffffff;
+          text-decoration: none;
+          &__Groupname {
+            font-size: 15px;
+          }
+          &__Message {
+            margin-top: 5px;
+            font-size: 11px;
+          }
+        }
+      }
   }
 
 }
