@@ -4,40 +4,23 @@
     .MainChat__Header__Group-Info
       .MainChat__Header__Group-Info__Left
         .MainChat__Header__Group-Info__Left__Groupname
-          test
+          = @group.name
         .MainChat__Header__Group-Info__Left__Members
-          Member : masa
-      = form_with url: "#" do |form|
-        %button{type: "submit", class:'MainChat__Header__Group-Info__Editbtn'}
-          Edit
-
+          Member :
+          - @group.users.each do |user|
+            = user.name
+      = link_to "Edit", edit_group_path(@group), class:'MainChat__Header__Group-Info__Editbtn'
+          
   .MessageList
-    .MessageList__Field
-      .MessageList__Field__Info
-        .MessageList__Field__Info__Username
-          masa
-        .MessageList__Field__Info__Date
-          2019/11/20(Wed) 17:43:01
-      .MessageList__Field__Comment
-        おはよう！
-    .MessageList__Field
-      .MessageList__Field__Info
-        .MessageList__Field__Info__Username
-          masa
-        .MessageList__Field__Info__Date
-          2019/11/20(Wed) 17:43:01
-      .MessageList__Field__Comment
-        おはよう！
+    = render @messages
 
   .MessageForm
-    .MessageForm__Content
-      .MessageForm__Content__Textbox
-        = form_with url: "#" do |form|
-          = form.text_field :body, class: 'MessageForm__Content__Textbox__Textfield', placeholder: 'type a message'
-          = form.label :image, class: 'MessageForm__Content__Textbox__Form-Image' do
-            %i.far.fa-image
-            = form.file_field :image
-      .MessageForm__Content__Button
-        = form_with url: "#" do |form|
-          %button{type: "submit", class:'MessageForm__Content__Button--Sendbtn'}
-            Send
+    .MessageForm__Textbox
+      = form_with model: [@group, @message], html: {class: "Form"}, local: true do |form|
+        .MessageForm__Textbox__Textfield
+          = form.text_field :body, class: 'MessageForm__Textbox__Textfield--Text', placeholder: 'type a message'
+          .MessageForm__Textbox__Textfield__Label
+            = form.label :image, class: 'MessageForm__Textbox__Textfield__Label__Form-Image' do
+              = icon('far', 'image')
+              = form.file_field :image
+        = form.submit "Send", class:'MessageForm__Textbox__SendButton'
