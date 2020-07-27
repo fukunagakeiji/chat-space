@@ -1,0 +1,11 @@
+.MessageList__Field
+  .MessageList__Field__Info
+    .MessageList__Field__Info__Username
+      = message.user.name
+    .MessageList__Field__Info__Date
+      = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+  .MessageList__Field__Comment
+    - if message.body.present?
+      %p.Message__body
+        = message.body
+    = image_tag message.image.url, class: 'Message__image' if message.image.present?

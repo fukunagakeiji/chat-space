@@ -80,6 +80,7 @@
 
 }
 
+
 .MainChat {
   width: calc(100vw - 300px);
   height: 100vh;
@@ -106,18 +107,23 @@
         &__Members {
           color: #999999;
           font-size: 12px;
+          display: flex;
+          .ul {
+            display: inline;
+          }
         }
       }
       &__Editbtn {
+        display: inline-block;
         height: 40px;
         width: 72px;
-        margin: 28px 0px 32px 0px;
-        padding: 0px 20px;
+        margin: auto 0px;
+        padding: 9px 20px;
         border:1px solid #38aef0;
         color: #38aef0;
         font-size: 16px;
-        background-color: #ffffff;
         cursor: pointer;
+        text-decoration: none;
       }
     }
   }
@@ -162,47 +168,51 @@
     padding:20px 40px;
     box-sizing: border-box;
 
-    &__Content {
-      display: flex;
-      justify-content: space-between;
-
-      &__Textbox {
-        width: 100%;
-        background-color: #ffffff;
+    &__Textbox {
+      width: 100%;
+      height: 50px;
+      .Form {
+        display: flex;
+        justify-content: space-between;
+      }
+      &__Textfield {
+        display: flex;
+        justify-content: space-between;
         position: relative;
-        
-        &__Textfield {
+        width: 100%;
+        &--Text {
           width: 100%;
           height: 50px;
           padding: 0px 45px 0px 10px;
           border: none;
+          background-color: #fff;
         }
-        &__Form-Image {
+        &__Label {
           position: absolute;
           right: 10px;
-          input{
-            display: none;
-          }
-          .fa-image {
-            font-size: 25px;
-            line-height: 50px;
+          &__Form-Image {
+            height: 50px;
+            input{
+              display: none;
+            }
+            .fa-image {
+              font-size: 25px;
+              line-height: 50px;
+            }
           }
         }
+
       }
-      &__Button {
+      &__SendButton {
         height: 50px;
         padding: 0px 30px;
         margin-left: 15px;
+        color: #fff;
+        font-size: 16px;
         background-color: #38aef0;
-        display: flex;
-        align-items: center;
-        &--Sendbtn {
-          color: #fff;
-          font-size: 16px;
-          background-color: #38aef0;
-          border: none;
-        }
+        border: none;
       }
     }
+    
   }
 }
